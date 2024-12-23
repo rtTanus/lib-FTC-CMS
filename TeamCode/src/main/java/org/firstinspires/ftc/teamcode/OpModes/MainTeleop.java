@@ -7,11 +7,9 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import org.firstinspires.ftc.teamcode.components.*;
 
 public class MainTeleop extends OpMode {
-    DriveBase drive = new DriveBase();
-
+    DriveBase drive = new DriveBase(DriveBase.DriveType.MECANUM);
 
     public void init(){
-        drive.setDriveTrainType(DriveBase.DriveType.MECANUM);
         drive.setMecanumMotors(
                 hardwareMap.get(DcMotor.class, "MEF"),
                 hardwareMap.get(DcMotor.class, "MDF"),

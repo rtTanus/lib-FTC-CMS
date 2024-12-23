@@ -17,6 +17,7 @@ import mcs.organization.commandBased.Classes.Command;
 public class MecanumDrive extends Command {
     DcMotor leftFront, rightFront, leftBack, rightBack;
     float straight_control,lateral_control,angle_control;
+
     public void setMecanumMotors(DcMotor leftFront, DcMotor rightFront, DcMotor leftBack, DcMotor rightBack){
         this.leftFront = leftFront;
         this.rightFront = rightFront;

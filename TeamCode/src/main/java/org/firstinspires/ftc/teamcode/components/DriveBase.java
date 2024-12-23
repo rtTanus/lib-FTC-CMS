@@ -16,6 +16,15 @@ import mcs.organization.commandBased.Classes.Component;
 public class DriveBase extends Component {
     private DcMotor Arm;
     private MecanumDrive mecanum_drive = new MecanumDrive();
+    public enum DriveType{
+        MECANUM,
+        TANK
+    }
+    public DriveType type;
+
+    public DriveBase(DriveType type){
+        this.type = type;
+    }
 
     @Override
     public void start() {
@@ -32,15 +41,6 @@ public class DriveBase extends Component {
 
     }
 
-    public enum DriveType{
-        MECANUM,
-        TANK
-    }
-    public DriveType type;
-
-    public void setDriveTrainType(DriveType type) {
-        this.type = type;
-    }
 
     public void setMecanumMotors(DcMotor leftFront, DcMotor rightFront, DcMotor leftBack, DcMotor rightBack){
         this.mecanum_drive.setMecanumMotors(leftFront,rightFront,leftBack,rightBack);
